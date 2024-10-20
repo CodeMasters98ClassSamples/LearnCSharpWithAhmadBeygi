@@ -1,4 +1,7 @@
-﻿//Managment 
+﻿
+using System.Text;
+
+//Managment 
 namespace ConsoleApp1;
 
 //class : container for method and properties
