@@ -1,4 +1,6 @@
-﻿namespace HelloToDotnetFandamental;
+﻿using HelloToDotnetFandamental.Models;
+
+namespace HelloToDotnetFandamental;
 
 //Class -> Container For Method + Property
 internal class Program
@@ -40,6 +42,31 @@ internal class Program
 
     static void Main(string[] args)
     {
+        int[,] matrix = new int[2, 2];
+        {
+            matrix[0, 0] = 1;
+            matrix[0, 1] = 2;
+            matrix[1, 0] = 3;
+            matrix[1, 1] = 4;
+        };
+        Console.WriteLine(matrix);
+        for (int i = 0; i < 2; i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                Console.WriteLine(matrix[i, j] + "");
+            }
+            Console.WriteLine();
+        }
+
+
+
+
+        User user = new User();
+        user.ShowDetail();
+
+
+
         //bool isMale = false;
         //string userInput = Console.ReadLine();
         //if (userInput == "M")
@@ -53,8 +80,10 @@ internal class Program
         //int num = int.Parse(numStr);
 
         int num = int.Parse(Console.ReadLine());
-
-        bool isMale = Console.ReadLine() == "M" ? true : false;
+        int[] ints = { 1, 2, 3, 4 };
+        int[,] numbers = { { 1, 4, 2 }, { 3, 6, 8 } };
+        int[,] numbers2 = { { 1, 4, 2 }, { 3, 6, 8 } };
+        user.Gender = Console.ReadLine() == "M" ? true : false;
 
         //موبایل کاربر را دریافت نمایید، تا زمانی که موبایل کاربر
         //تعداد آن 11 تا نباشد و همچنین با 0 شروع نشده بود اجازه ادامه ندارد
@@ -319,28 +348,28 @@ internal class Program
         }
         //Mehr
         Console.WriteLine("please enter your mobile?");
-        string mobileNumber = Console.ReadLine() ?? "";
+        user.MobileNumber = Console.ReadLine() ?? "";
 
         //09129564205
         //9129564205 -> Format , start without 0 -> 09129564205 OK
         //+989129564205 -> 09129564205 -> OK
         //0912956420 -> Format
 
-        if (string.IsNullOrEmpty(mobileNumber))
+        if (string.IsNullOrEmpty(user.MobileNumber))
         {
             Console.WriteLine($"Please enter valid mobile number {applicationName}");
             return;
         }
-        mobileNumber = mobileNumber.Trim().Replace("+98", "0");
+        user.MobileNumber = user.MobileNumber.Trim().Replace("+98", "0");
         //if (mobileNumber.StartsWith("+98"))
         //{
         //    mobileNumber = mobileNumber.Replace("+98", "0");
         //}
 
-        if (mobileNumber.Length == 10 && !mobileNumber.StartsWith("0"))
+        if (user.MobileNumber.Length == 10 && !user.MobileNumber.StartsWith("0"))
         {
             //mobileNumber = "0" + mobileNumber;
-            mobileNumber = $"0{mobileNumber}";
+            user.MobileNumber = $"0{user.MobileNumber}";
         }
         else
         {
