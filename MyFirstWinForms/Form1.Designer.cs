@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             loginButton = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            UsernameTextBox = new TextBox();
+            PasswordTextBox = new TextBox();
             label1 = new Label();
             label2 = new Label();
             SuspendLayout();
@@ -43,20 +43,21 @@
             loginButton.TabIndex = 0;
             loginButton.Text = "ورود";
             loginButton.UseVisualStyleBackColor = true;
+            loginButton.Click += loginButton_Click;
             // 
-            // textBox1
+            // UsernameTextBox
             // 
-            textBox1.Location = new Point(78, 12);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(224, 23);
-            textBox1.TabIndex = 1;
+            UsernameTextBox.Location = new Point(78, 12);
+            UsernameTextBox.Name = "UsernameTextBox";
+            UsernameTextBox.Size = new Size(224, 23);
+            UsernameTextBox.TabIndex = 1;
             // 
-            // textBox2
+            // PasswordTextBox
             // 
-            textBox2.Location = new Point(78, 51);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(224, 23);
-            textBox2.TabIndex = 2;
+            PasswordTextBox.Location = new Point(78, 51);
+            PasswordTextBox.Name = "PasswordTextBox";
+            PasswordTextBox.Size = new Size(224, 23);
+            PasswordTextBox.TabIndex = 2;
             // 
             // label1
             // 
@@ -83,8 +84,8 @@
             ClientSize = new Size(329, 150);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(PasswordTextBox);
+            Controls.Add(UsernameTextBox);
             Controls.Add(loginButton);
             Name = "Form1";
             Text = "Form1";
@@ -95,8 +96,8 @@
         #endregion
 
         private Button loginButton;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox UsernameTextBox;
+        private TextBox PasswordTextBox;
         private Label label1;
         private Label label2;
     }

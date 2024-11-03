@@ -42,6 +42,10 @@ internal class Program
 
     static void Main(string[] args)
     {
+        
+
+        string x = Console.ReadLine();
+        string s = "";
         int[,] matrix = new int[2, 2];
         {
             matrix[0, 0] = 1;
